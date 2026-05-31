@@ -66,7 +66,7 @@ src/ <br>
 
 ## Kurulum
 bash# Repoyu klonlayın <br>
-git clone https://github.com/kullanici-adi/mortgage-calculator.git
+git clone https://github.com/dursunkokturk/React-JS-Project-Loan-And-Mortgage-Calculator-App.git
 
 ### Proje klasörüne girin
 cd mortgage-calculator
@@ -157,7 +157,7 @@ src/ <br>
 bash
 
 ### Clone the repo
-git clone https://github.com/username/mortgage-calculator.git
+git clone https://github.com/dursunkokturk/React-JS-Project-Loan-And-Mortgage-Calculator-App.git
 
 ### Navigate to the project folder
 cd mortgage-calculator
