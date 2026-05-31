@@ -14,3 +14,92 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+
+# TR
+🏦 Kredi ve İpotek Hesaplayıcı
+Aylık taksit ve toplam geri ödeme tutarını hesaplayan, "Geri Ödeme" ve "Sadece Faiz" modlarını destekleyen, React ile geliştirilmiş tam duyarlı bir ipotek hesaplama uygulaması.
+
+## Canlı Önizleme
+
+[Proje önizlemesi.](https://dursunkokturk.github.io/React-JS-Project-Loan-And-Mortgage-Calculator-App)
+
+![Proje Görseli](src/assets/img/react-js-project-loan-mortgage-calculator.png)
+
+## Özellikler
+
+- İki Hesaplama Modu — Anapara + faiz içeren "Geri Ödeme" ve yalnızca faiz hesaplayan "Sadece Faiz" modları
+- Otomatik Yeniden Hesaplama — Faiz oranı veya vade değiştiğinde, butona tıklamadan sonuç otomatik güncellenir
+- Alan Bazlı Doğrulama — Kredi tutarı, vade, faiz oranı ve kredi tipi için ayrı hata mesajları
+- Aktif Prefix Vurgusu — Odaklanan alana göre "Yıl" ve "%" öneklerinin rengi değişir
+- Hepsini Sil — Tek tıkla tüm form alanlarını ve sonuçları sıfırlar
+- Koşullu Footer — Hesaplama yapılmadığında bilgi ekranı, yapıldığında sonuç ekranı gösterilir
+- Tam Duyarlı Tasarım — Mobil, tablet ve masaüstü için üç ayrı düzen
+
+
+## Duyarlı Düzenler
+
+| Ekran    | Genişlik         | Düzen                                                           |
+| -------- |------------------| ----------------------------------------------------------------|
+| Mobil    | 375px Varsayılan | Tek sütun, dikey akış                                           |
+| Tablet   | ≥ 768px          | 688px kart, header flex, vade ve faiz yan yana                  |
+| Masaüstü | ≥ 1110px         | İki sütunlu: sol form, sağ footer; footer sol alt köşe yuvarlak |
+
+## Teknolojiler
+
+| Teknoloji  | Açıklama                                           |
+| ---------- |----------------------------------------------------|
+| React 18   | Bileşen yapısı ve state yönetimi                   |
+| CSS3       | Flexbox, @media sorguları                          |
+| JavaScript | İpotek formülleri, useEffect ile reaktif hesaplama |
+
+## Proje Yapısı
+src/ <br>
+├── App.jsx        # Tüm uygulama mantığı ve arayüz <br>
+├── App.css        # Global stiller <br>
+└── assets/ <br>
+    └── img/ <br>
+        ├── calculator.png        # Hesapla butonu ikonu <br>
+        └── calculate-footer.png  # Boş footer görseli <br>
+
+## Kurulum
+bash# Repoyu klonlayın <br>
+git clone https://github.com/kullanici-adi/mortgage-calculator.git
+
+### Proje klasörüne girin
+cd mortgage-calculator
+
+### Bağımlılıkları yükleyin
+npm install
+
+### Geliştirme sunucusunu başlatın
+npm run dev <br>
+Tarayıcınızda http://localhost:5173 adresini açın.
+
+## Hesaplama Formülleri
+
+|                                                                                  | 
+| -------------------------------------------------------------------------------- |
+| Geri Ödeme (Anapara + Faiz):                                                     |
+| Aylık Taksit = (P × r × (1 + r)^n) / ((1 + r)^n − 1)                             |
+| Sadece Faiz:                                                                     |
+| Aylık Taksit = P × r                                                             |
+| P = Anapara, r = Aylık faiz oranı (yıllık oran / 12 / 100), n = Toplam ay sayısı |
+| Toplam ödeme tutarı: Aylık Taksit × n                                            |
+
+## Tasarım Detayları
+
+- Renk Paleti:
+
+  - #D8DB2F — Sarı-yeşil vurgu (buton, aktif radio, aktif prefix)
+  - #133041 — Koyu lacivert (başlıklar, footer arka planı)
+  - #031e2e — Çok koyu (sonuç kartı arka planı)
+  - #9ABED5 — Açık mavi (footer metin)
+  - #d73328 — Kırmızı (hata mesajları)
+  - #E4F4FD — Açık mavi (tablet/masaüstü body arka planı)
+
+- Font: Plus Jakarta Sans
+- Masaüstü Footer Köşesi: Sol alt köşe border-radius: 80px ile oval
