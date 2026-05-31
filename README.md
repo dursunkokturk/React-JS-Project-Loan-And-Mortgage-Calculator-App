@@ -20,7 +20,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 # TR
-🏦 Kredi ve İpotek Hesaplayıcı
+# Kredi ve İpotek Hesaplayıcı
 Aylık taksit ve toplam geri ödeme tutarını hesaplayan, "Geri Ödeme" ve "Sadece Faiz" modlarını destekleyen, React ile geliştirilmiş tam duyarlı bir ipotek hesaplama uygulaması.
 
 ## Canlı Önizleme
@@ -38,7 +38,6 @@ Aylık taksit ve toplam geri ödeme tutarını hesaplayan, "Geri Ödeme" ve "Sad
 - Hepsini Sil — Tek tıkla tüm form alanlarını ve sonuçları sıfırlar
 - Koşullu Footer — Hesaplama yapılmadığında bilgi ekranı, yapıldığında sonuç ekranı gösterilir
 - Tam Duyarlı Tasarım — Mobil, tablet ve masaüstü için üç ayrı düzen
-
 
 ## Duyarlı Düzenler
 
@@ -103,3 +102,93 @@ Tarayıcınızda http://localhost:5173 adresini açın.
 
 - Font: Plus Jakarta Sans
 - Masaüstü Footer Köşesi: Sol alt köşe border-radius: 80px ile oval
+
+
+
+
+# EN
+# Loan and Mortgage Calculator
+
+A fully responsive mortgage calculator built with React, supporting "Repayment" and "Interest Only" modes to calculate monthly installments and total repayment amounts.
+
+## Live Preview
+
+[Project preview.](https://dursunkokturk.github.io/React-JS-Project-Loan-And-Mortgage-Calculator-App)
+
+![Proje Görseli](src/assets/img/react-js-project-loan-mortgage-calculator.png)
+
+## Features
+
+- Two Calculation Modes — "Repayment" mode including principal + interest, and "Interest Only" mode calculating interest alone
+- Auto Recalculation — Results update automatically when the interest rate or term changes, without clicking a button
+- Field-Level Validation — Separate error messages for loan amount, term, interest rate, and loan type
+- Active Prefix Highlight — The color of "Years" and "%" prefixes changes based on the focused field
+- Clear All — Resets all form fields and results with a single click
+- Conditional Footer — Shows an info screen when no calculation has been made, and a results screen when one has
+- Fully Responsive Design — Three separate layouts for mobile, tablet, and desktop
+
+## Responsive Layouts
+
+| Screen  | Width         | Layout                                                                 |
+| ------- |---------------| -----------------------------------------------------------------------|
+| Mobile  | 375px Default | Single column, vertical flow                                           |
+| Tablet  | ≥ 768px       | 688px card, header flex, term and rate side by side                    |
+| Desktop | ≥ 1110px      | Two-column: left form, right footer; footer bottom-left corner rounded |
+
+## Technologies
+
+| Technology | Description                                            |
+| ---------- |--------------------------------------------------------|
+| React 18   | Component structure and state management               |
+| CSS3       | Flexbox, @media queries                                |
+| JavaScript | Mortgage formulas, reactive calculation with useEffect |
+
+## Project Structure
+
+src/ <br>
+├── App.jsx        # All application logic and UI <br>
+├── App.css        # Global styles <br>
+└── assets/ <br>
+    └── img/ <br>
+        ├── calculator.png        # Calculate button icon <br>
+        └── calculate-footer.png  # Empty footer image <br>
+
+## Installation
+bash
+
+### Clone the repo
+git clone https://github.com/username/mortgage-calculator.git
+
+### Navigate to the project folder
+cd mortgage-calculator
+
+### Install dependencies
+npm install
+
+### Start the development server
+npm run dev <br>
+
+Open http://localhost:5173 in your browser.
+
+## Calculation Formulas
+
+|                                                                                               | 
+| --------------------------------------------------------------------------------------------- |
+| Repayment (Principal + Interest):                                                             |
+| Monthly Payment = (P × r × (1 + r)^n) / ((1 + r)^n − 1)                                       |
+| Interest Only:                                                                                |
+| Monthly Payment = P × r                                                                       |
+| P = Principal, r = Monthly interest rate (annual rate / 12 / 100), n = Total number of months |
+| Total repayment amount: Monthly Payment × n                                                   |
+
+## Design Details
+
+- Color Palette:
+    - #D8DB2F — Yellow-green accent (button, active radio, active prefix)
+    - #133041 — Dark navy (headings, footer background)
+    - #031e2e — Very dark (results card background)
+    - #9ABED5 — Light blue (footer text)
+    - #d73328 — Red (error messages)
+    - #E4F4FD — Light blue (tablet/desktop body background)
+- Font: Plus Jakarta Sans
+- Desktop Footer Corner: Bottom-left corner oval with border-radius: 80px
